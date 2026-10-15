@@ -31,6 +31,7 @@ Three files, no framework, no bundler:
 | Line clear | `clearLines()` — iterates board bottom-up, splices full rows, prepends empty row |
 | Scoring | `LINE_SCORES = [0,100,300,500,800]` × `level`; hard drop +2/cell, soft drop +1/row |
 | Speed | `dropInterval = max(100, 1000 − (level−1) × 90)` ms; level = `floor(lines/10) + 1` |
+| Skins | `SKINS` (retro/neon/pastel/pixel), each `{ colors, drawBlock(ctx, px, py, size, color) }`; `drawBlock()` dispatches to `SKINS[currentSkin]`; `applySkin()` sets `body.skin-<name>` and saves `localStorage['tetris-skin']` |
 | Ghost piece | `ghostY()` — projects current piece down until collision; drawn at `globalAlpha = 0.2` |
 | State flags | `paused`, `gameOver`, `animId` (RAF handle) |
 
